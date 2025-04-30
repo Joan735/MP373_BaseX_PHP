@@ -9,7 +9,7 @@ try {
 
     // Abre la base de datos
     $session->execute("OPEN eventos");
-
+    $session->execute("SET SERIALIZER indent=yes");
     // Consulta XQuery
     $input = '/conjunto_de_eventos';
     $query = $session->query($input);
@@ -20,10 +20,8 @@ try {
 
     // Cierra la consulta
     $query->close();
-
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 } finally {
     $session->close();
 }
-?>

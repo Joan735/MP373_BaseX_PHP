@@ -23,7 +23,7 @@ include_once 'load.php';
 use BaseXClient\BaseXException;
 use BaseXClient\Session;
 
-if (!isset($_POST['nombre'])) {
+if (!isset($_POST['id'])) {
   $_POST['id'] = "";
 }
 
@@ -37,19 +37,14 @@ if (isset($_POST['submit'])) {
     // Borrar evento si se encuentra el id
     $xqueryDelete = <<< XQ
 XQUERY
-  for $a in 
-    <evento>
-      <id>$id</id>
-      <nombre>$nombre</nombre>
-      <fecha>$fecha</fecha>
-      <ubicacion>$ubicacion</ubicacion>
-      <descripcion>$descripcion</descripcion>
-    </evento>
-  into /conjunto_de_eventos
+  for \$a in //evento
+  where \$a/id="$id"
+  return delete node \$a
+
 XQ;
 
-    $session->execute($xqueryInsert);
-    echo "<p>✅ Evento insertado correctamente con ID $id.</p>";
+    $session->execute($xqueryDelete);
+    echo "<p>✅ Evento borrado correctamente con ID $id.</p>";
     // Mostrar eventos actualizados
     $session->execute("SET SERIALIZER indent=yes");
     $result = $session->execute("XQUERY /conjunto_de_eventos");
