@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libros>
+    <libro id="1">
+        <titulo>Cien años de soledad</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <anio_publicacion>1967</anio_publicacion>
+        <genero>Realismo mágico</genero>
+    </libro>
+    <libro id="2">
+        <titulo>Don Quijote de la Mancha</titulo>
+        <autor>Miguel de Cervantes</autor>
+        <anio_publicacion>1605</anio_publicacion>
+        <genero>Novela de caballería</genero>
+    </libro>
+    <libro id="3">
+        <titulo>El amor en los tiempos del cólera</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <anio_publicacion>1985</anio_publicacion>
+        <genero>Romántico</genero>
+    </libro>
+    <libro id="4">
+        <titulo>1984</titulo>
+        <autor>George Orwell</autor>
+        <anio_publicacion>1949</anio_publicacion>
+        <genero>Ciencia ficción</genero>
+    </libro>
+</libros>

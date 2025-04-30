@@ -1,0 +1,14 @@
+<eventos>
+  <evento>
+    <id>1</id>
+    <nombre>Concierto</nombre>
+    <fecha>2025-03-26</fecha>
+    <descripcion>Concierto en el auditorio</descripcion>
+  </evento>
+  <evento>
+    <id>2</id>
+    <nombre>Charla</nombre>
+    <fecha>2025-04-01</fecha>
+    <descripcion>Charla sobre inteligencia artificial</descripcion>
+  </evento>
+</eventos>

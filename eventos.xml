@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<conjunto_de_eventos>
+    <evento>
+        <id>1</id>
+        <nombre>Conferencia Internacional de Inteligencia Artificial</nombre>
+        <fecha>2025-03-10</fecha>
+        <ubicacion>Centro de Convenciones de Barcelona</ubicacion>
+        <descripcion>Expertos en IA de todo el mundo se reúnen para discutir los últimos avances y
+            aplicaciones.</descripcion>
+    </evento>
+    <evento>
+        <id>2</id>
+        <nombre>Feria de Tecnología y Innovación</nombre>
+        <fecha>2025-04-15</fecha>
+        <ubicacion>Recinto Ferial de Madrid</ubicacion>
+        <descripcion>Exposición de las últimas innovaciones tecnológicas de empresas líderes del
+            sector.</descripcion>
+    </evento>
+    <evento>
+        <id>3</id>
+        <nombre>Hackathon Global</nombre>
+        <fecha>2025-05-20</fecha>
+        <ubicacion>Espacio Coworking de Valencia</ubicacion>
+        <descripcion>Programadores y desarrolladores se enfrentan para crear soluciones innovadoras
+            en 48 horas.</descripcion>
+    </evento>
+    <evento>
+        <id>4</id>
+        <nombre>Taller de Ciberseguridad</nombre>
+        <fecha>2025-06-05</fecha>
+        <ubicacion>Universidad de Sevilla</ubicacion>
+        <descripcion>Curso intensivo sobre cómo proteger información digital y prevenir ataques
+            cibernéticos.</descripcion>
+    </evento>
+    <evento>
+        <id>5</id>
+        <nombre>Seminario de Realidad Virtual</nombre>
+        <fecha>2025-07-12</fecha>
+        <ubicacion>Centro de Tecnología de Málaga</ubicacion>
+        <descripcion>Exploración de aplicaciones y tecnologías de realidad virtual en diversos
+            campos.</descripcion>
+    </evento>
+    <evento>
+        <id>6</id>
+        <nombre>Conferencia de Tecnología Financiera</nombre>
+        <fecha>2025-08-18</fecha>
+        <ubicacion>Centro de Negocios de Bilbao</ubicacion>
+        <descripcion>Discusión sobre las últimas innovaciones y tendencias en tecnología financiera.</descripcion>
+    </evento>
+    <evento>
+        <id>7</id>
+        <nombre>Exposición de Robótica</nombre>
+        <fecha>2025-09-22</fecha>
+        <ubicacion>Parque Científico de Zaragoza</ubicacion>
+        <descripcion>Presentación de los avances más recientes en robótica y automatización.</descripcion>
+    </evento>
+    <evento>
+        <id>8</id>
+        <nombre>Jornada de Computación Cuántica</nombre>
+        <fecha>2025-10-15</fecha>
+        <ubicacion>Centro de Investigación de Granada</ubicacion>
+        <descripcion>Conferencia y talleres sobre los principios y aplicaciones de la computación
+            cuántica.</descripcion>
+    </evento>
+    <evento>
+        <id>9</id>
+        <nombre>Cumbre de Tecnología Verde</nombre>
+        <fecha>2025-11-05</fecha>
+        <ubicacion>Instituto de Energía de Barcelona</ubicacion>
+        <descripcion>Debate sobre el papel de la tecnología en la sostenibilidad y la protección del
+            medio ambiente.</descripcion>
+    </evento>
+    <evento>
+        <id>10</id>
+        <nombre>Festival de Innovación en Salud</nombre>
+        <fecha>2025-12-01</fecha>
+        <ubicacion>Hospital Universitario de Madrid</ubicacion>
+        <descripcion>Presentación de innovaciones tecnológicas aplicadas al campo de la salud y la
+            medicina.</descripcion>
+    </evento>
+    <evento>
+        <id>11</id>
+        <nombre>Simposio de Inteligencia Artificial en Educación</nombre>
+        <fecha>2025-12-15</fecha>
+        <ubicacion>Facultad de Ciencias de la Información de Madrid</ubicacion>
+        <descripcion>Análisis de cómo la inteligencia artificial está transformando la educación.</descripcion>
+    </evento>
+    <evento>
+        <id>12</id>
+        <nombre>Foro de Tecnologías de la Información</nombre>
+        <fecha>2025-01-20</fecha>
+        <ubicacion>Centro de Convenciones de Valencia</ubicacion>
+        <descripcion>Reunión de expertos para discutir las últimas tendencias en tecnologías de la
+            información.</descripcion>
+    </evento>
+    <evento>
+        <id>13</id>
+        <nombre>Encuentro de Desarrolladores de Software</nombre>
+        <fecha>2025-02-25</fecha>
+        <ubicacion>Centro Tecnológico de Bilbao</ubicacion>
+        <descripcion>Jornada dedicada a compartir conocimientos y avances en el desarrollo de
+            software.</descripcion>
+    </evento>
+    <evento>
+        <id>14</id>
+        <nombre>Taller de Internet de las Cosas (IoT)</nombre>
+        <fecha>2025-03-05</fecha>
+        <ubicacion>Laboratorio Tecnológico de Sevilla</ubicacion>
+        <descripcion>Exploración de las aplicaciones y desafíos del Internet de las Cosas.</descripcion>
+    </evento>
+</conjunto_de_eventos>
