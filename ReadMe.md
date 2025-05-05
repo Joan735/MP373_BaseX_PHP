@@ -1,5 +1,6 @@
 ### Repositorio con archivos php para editar un xml de eventos
 
+· BaseXClient: carpeta que contiene archivos que ayuda para realizar las consultas.
 · Actualizar.html: archivo con un formulario que redirige a Actualizar.php. <br>
 · Actualizar.php: archivo que recibe los datos de Actualizar.html y actualizar un evento por id. <br>
 · Borrar.php: archivo con un formulario que borra un evento por id. <br>
