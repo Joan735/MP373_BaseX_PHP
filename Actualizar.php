@@ -3,19 +3,20 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Añadir Evento</title>
+  <title>Actualizar Evento</title>
 </head>
 
 <body>
-  <h2>Insertar Evento</h2>
-  <form action="Insertar.php" method="post">
+  <h2>Actualizar Evento por ID</h2>
+  <form action="Actualizar.php" method="post">
+    <label>ID: <input type="text" name="id" required></label><br>
     <label>Nombre: <input type="text" name="nombre" required></label><br>
     <label>Fecha: <input type="date" name="fecha" required></label><br>
     <label>Ubicacion: <input type="text" name="ubicacion" required></label><br>
     <label>Descripción:<br>
       <textarea name="descripcion" rows="4" cols="50" required></textarea>
     </label><br><br>
-    <button type="submit" name="insertar">Insertar evento</button>
+    <button type="submit" name="actualizar">Actualizar evento</button>
   </form>
 </body>
 
@@ -27,6 +28,9 @@ include_once 'load.php';
 use BaseXClient\BaseXException;
 use BaseXClient\Session;
 
+if (!isset($_POST['id'])) {
+  $_POST['id'] = "";
+}
 if (!isset($_POST['nombre'])) {
   $_POST['nombre'] = "";
 }
@@ -40,46 +44,52 @@ if (!isset($_POST['descripcion'])) {
   $_POST['descripcion'] = "";
 }
 
+$id = htmlspecialchars($_POST['id']);
 $nombre = htmlspecialchars($_POST['nombre']);
 $fecha = htmlspecialchars($_POST['fecha']);
 $ubicacion = htmlspecialchars($_POST['ubicacion']);
 $descripcion = htmlspecialchars($_POST['descripcion']);
 
-if (isset($_POST['submit'])) {
+
+if (isset($_POST['actualizar'])) {
   try {
     $session = new Session("localhost", 1984, "admin", "admin");
     $session->execute("OPEN eventos"); // obrim la base de dades
 
-    // Obtener el mayor ID existente y sumar 1
-    $queryId = <<<XQ
-XQUERY
-  let \$ids :=//evento/id
-  return if (empty(\$ids)) then 1 else max(\$ids) + 1
+    // Verificamos si existe un evento con ese ID
+    $idCheckQuery = <<<XQ
+XQUERY 
+count(/conjunto_de_eventos/evento[id = $id])
 XQ;
+    $existe = intval($session->execute($idCheckQuery));
 
-    $id = trim($session->execute($queryId));
-
-    // Insertar nuevo evento
-    $xqueryInsert = <<< XQ
-XQUERY
-  insert node
-    <evento>
+    if ($existe > 0) {
+      // Actualiza el evento
+      $xqueryUpdate = <<< XQ
+      XQUERY
+      for \$a in ./conjunto_de_eventos/evento
+      where \$a/id=$id
+      return replace node \$a with
+      <evento>
       <id>$id</id>
       <nombre>$nombre</nombre>
       <fecha>$fecha</fecha>
       <ubicacion>$ubicacion</ubicacion>
       <descripcion>$descripcion</descripcion>
-    </evento>
-  into /conjunto_de_eventos
-XQ;
+      </evento>
+      XQ;
 
-    $session->execute($xqueryInsert);
-    echo "<p>✅ Evento insertado correctamente con ID $id.</p>";
-    // Mostrar eventos actualizados
-    $session->execute("SET SERIALIZER indent=yes");
-    $result = $session->execute("XQUERY /conjunto_de_eventos");
-    echo "<h3>📋 Eventos actuales:</h3>";
-    echo "<pre>" . htmlspecialchars($result) . "</pre>";
+      $session->execute($xqueryUpdate);
+      echo "<p>✅ Evento actualizado correctamente con ID $id.</p>";
+      echo "<h3>📋 Eventos:</h3>";
+      // Mostrar eventos actualizados
+      $session->execute("SET SERIALIZER indent=yes");
+      $result = $session->execute("XQUERY /conjunto_de_eventos");
+      echo "<h3>📋 Eventos actuales:</h3>";
+      echo "<pre>" . htmlspecialchars($result) . "</pre>";
+    } else {
+      echo "<p>❌ Evento no encontrado con ID $id.</p>";
+    }
 
     $session->close();
   } catch (Exception $e) {
