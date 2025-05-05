@@ -6,7 +6,7 @@
 · Filtrar.php: archivo con un formulario que filtra un evento por id. <br>
 · Insertar.php: archivo con un formulario que inserta un evento con los datos del formulario. <br>
 · Lectura.php: archivo que muestra los eventos actuales. <br>
-· load.php: archivo que utilizar los archivos de BaseXClient. <br>
-· Menu_resultados.php: archivo que ejecuta el procedimiento elegido. <br>
 · Menu.html: archivo que contiene los form de todos los procedimientos. <br>
-· eventos.xml: archivo xml con los eventos.
+· Menu_resultados.php: archivo que ejecuta el procedimiento elegido. <br>
+· eventos.xml: archivo xml con los eventos. <br>
+· load.php: archivo que utilizar los archivos de BaseXClient.
