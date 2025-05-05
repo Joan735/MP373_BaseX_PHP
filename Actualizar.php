@@ -1,29 +1,6 @@
-<!--  Un form que recoje los parametros de un evento y se guarda en sus respectias variables. Se mira si existe ese evento con una query. 
-      Si existe se hace otra query que cambia el nodo existente con otro con los datos nuevos y muestra los eventos. -->
+<!-- Se mira si existe ese evento con una query. 
+     Si existe se hace otra query que cambia el nodo existente con otro con los datos nuevos y muestra los eventos. -->
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Actualizar Evento</title>
-</head>
-
-<body>
-  <h2>Actualizar Evento por ID</h2>
-  <form action="Actualizar.php" method="post">
-    <label>ID: <input type="text" name="id" required></label><br>
-    <label>Nombre: <input type="text" name="nombre" required></label><br>
-    <label>Fecha: <input type="date" name="fecha" required></label><br>
-    <label>Ubicacion: <input type="text" name="ubicacion" required></label><br>
-    <label>Descripción:<br>
-      <textarea name="descripcion" rows="4" cols="50" required></textarea>
-    </label><br><br>
-    <button type="submit" name="actualizar">Actualizar evento</button>
-  </form>
-</body>
-
-</html>
-
 <?php
 include_once 'load.php';
 

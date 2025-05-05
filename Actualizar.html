@@ -1,0 +1,23 @@
+<!--  Un form que recoje los parametros de un evento y se guarda en sus respectias variables. Y redirige a Actualizar.php-->
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Actualizar Evento</title>
+</head>
+
+<body>
+  <h2>Actualizar Evento por ID</h2>
+  <form action="Actualizar.php" method="post">
+    <label>ID: <input type="text" name="id" required></label><br>
+    <label>Nombre: <input type="text" name="nombre" required></label><br>
+    <label>Fecha: <input type="date" name="fecha" required></label><br>
+    <label>Ubicacion: <input type="text" name="ubicacion" required></label><br>
+    <label>Descripción:<br>
+      <textarea name="descripcion" rows="4" cols="50" required></textarea>
+    </label><br><br>
+    <button type="submit" name="actualizar">Actualizar evento</button>
+  </form>
+</body>
+
+</html>
