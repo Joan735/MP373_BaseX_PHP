@@ -1,3 +1,4 @@
+<!--  Un menu que reune todos los forms del CRUD y al darle al boton de submit se redirige a Menu_resultados.php. -->
 <!DOCTYPE html>
 <html lang="en">
 

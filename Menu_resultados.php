@@ -1,3 +1,5 @@
+<!--    Al ser redirigido por Menu.php, inicia las variables necesarias y las guarda. 
+        Dependiendo del form enviado se hace una accion o otra, correspondiente al form. Cada proceso funciona igual que en los demas archivos. -->
 <!DOCTYPE html>
 <html lang="es">
 

@@ -1,3 +1,5 @@
+<!--  Un form que recoje los parametros de un evento y se guarda en sus respectias variables.  
+      Se hace una query que inserta en un nodo el id y las variables del evento en el xml y muestra todos los eventos. -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -27,6 +29,7 @@ include_once 'load.php';
 use BaseXClient\BaseXException;
 use BaseXClient\Session;
 
+// Se inician las variables "nombre", "fecha", "ubicacion" y "descripcion" y se guardan.
 if (!isset($_POST['nombre'])) {
   $_POST['nombre'] = "";
 }
@@ -45,7 +48,8 @@ $fecha = htmlspecialchars($_POST['fecha']);
 $ubicacion = htmlspecialchars($_POST['ubicacion']);
 $descripcion = htmlspecialchars($_POST['descripcion']);
 
-if (isset($_POST['submit'])) {
+// Si se presiona el boton insertar ocurre lo siguiente
+if (isset($_POST['insertar'])) {
   try {
     $session = new Session("localhost", 1984, "admin", "admin");
     $session->execute("OPEN eventos"); // obrim la base de dades
@@ -59,7 +63,7 @@ XQ;
 
     $id = trim($session->execute($queryId));
 
-    // Insertar nuevo evento
+    // Query para insertar nuevo evento
     $xqueryInsert = <<< XQ
 XQUERY
   insert node
@@ -72,7 +76,7 @@ XQUERY
     </evento>
   into /conjunto_de_eventos
 XQ;
-
+    // Ejecuta la query
     $session->execute($xqueryInsert);
     echo "<p>✅ Evento insertado correctamente con ID $id.</p>";
     // Mostrar eventos actualizados
@@ -80,7 +84,7 @@ XQ;
     $result = $session->execute("XQUERY /conjunto_de_eventos");
     echo "<h3>📋 Eventos actuales:</h3>";
     echo "<pre>" . htmlspecialchars($result) . "</pre>";
-
+    // Cierra la sesion
     $session->close();
   } catch (Exception $e) {
     echo "❌ Error: " . $e->getMessage();

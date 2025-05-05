@@ -1,3 +1,5 @@
+<!--  Un form que recoje los parametros de un evento y se guarda en sus respectias variables. Se mira si existe ese evento con una query. 
+      Si existe se hace otra query que cambia el nodo existente con otro con los datos nuevos y muestra los eventos. -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -28,6 +30,7 @@ include_once 'load.php';
 use BaseXClient\BaseXException;
 use BaseXClient\Session;
 
+// Se inician las variables "id", "nombre", "fecha", "ubicacion" y "descripcion" y se guardan.
 if (!isset($_POST['id'])) {
   $_POST['id'] = "";
 }
@@ -50,7 +53,7 @@ $fecha = htmlspecialchars($_POST['fecha']);
 $ubicacion = htmlspecialchars($_POST['ubicacion']);
 $descripcion = htmlspecialchars($_POST['descripcion']);
 
-
+// Si se presiona el boton actualizar ocurre lo siguiente
 if (isset($_POST['actualizar'])) {
   try {
     $session = new Session("localhost", 1984, "admin", "admin");
@@ -63,8 +66,9 @@ count(/conjunto_de_eventos/evento[id = $id])
 XQ;
     $existe = intval($session->execute($idCheckQuery));
 
+    // Si existe el evento ocurre lo siguiente, sino muestra un mensaje de no encontrado.
     if ($existe > 0) {
-      // Actualiza el evento
+      // Query para actualizar el evento
       $xqueryUpdate = <<< XQ
       XQUERY
       for \$a in ./conjunto_de_eventos/evento
@@ -79,6 +83,7 @@ XQ;
       </evento>
       XQ;
 
+      // Ejecuta la query
       $session->execute($xqueryUpdate);
       echo "<p>✅ Evento actualizado correctamente con ID $id.</p>";
       // Mostrar eventos actualizados
@@ -89,7 +94,7 @@ XQ;
     } else {
       echo "<p>❌ Evento no encontrado con ID $id.</p>";
     }
-
+    
     $session->close();
   } catch (Exception $e) {
     echo "❌ Error: " . $e->getMessage();
