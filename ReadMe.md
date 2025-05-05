@@ -1,13 +1,36 @@
-### Repositorio con archivos php para editar un xml de eventos
+## Implementación de BBDD con XML y BaseX
 
-· BaseXClient: carpeta que contiene archivos que ayuda para realizar las consultas. <br>
-· Actualizar.html: archivo con un formulario que redirige a Actualizar.php. <br>
-· Actualizar.php: archivo que recibe los datos de Actualizar.html y actualizar un evento por id. <br>
-· Borrar.php: archivo con un formulario que borra un evento por id. <br>
-· Filtrar.php: archivo con un formulario que filtra un evento por id. <br>
-· Insertar.php: archivo con un formulario que inserta un evento con los datos del formulario. <br>
-· Lectura.php: archivo que muestra los eventos actuales. <br>
-· Menu.html: archivo que contiene los form de todos los procedimientos. <br>
-· Menu_resultados.php: archivo que ejecuta el procedimiento elegido. <br>
-· eventos.xml: archivo xml con los eventos. <br>
-· load.php: archivo que utilizar los archivos de BaseXClient.
+---
+
+### 📋 Requisitos
+
+* **PHP**
+* **BaseX server** corriendo y accesible
+* **Navegador web** 
+
+---
+
+### 🗂 Estructura del repositorio
+
+```
+/
+├── BaseXClient/         # Librería de BaseX para PHP  
+├── eventos.xml          # XML de ejemplo con los eventos  
+├── load.php             # Incluye y configura BaseXClient  
+├── Actualizar.html      # Formulario para actualizar un evento  
+├── Actualizar.php       # Lógica para actualizar por ID  
+├── Borrar.php           # Formulario y lógica para borrar por ID  
+├── Filtrar.php          # Formulario y lógica para filtrar por ID  
+├── Insertar.php         # Formulario y lógica para insertar un nuevo evento  
+├── Lectura.php          # Muestra listados de eventos actuales  
+├── Menu.html            # Página principal con enlaces a cada operación  
+└── Menu_resultados.php  # Procesa la opción seleccionada y redirige  
+```
+
+---
+
+### ▶️ Uso rápido
+
+1. **Cargar** `eventos.xml` en tu base de datos BaseX.
+2. **Abrir** `Menu.html` en el navegador.
+3. **Seleccionar** la operación deseada y **completar** el formulario para gestionar las acciones deseadas.
