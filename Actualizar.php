@@ -81,11 +81,10 @@ XQ;
 
       $session->execute($xqueryUpdate);
       echo "<p>✅ Evento actualizado correctamente con ID $id.</p>";
-      echo "<h3>📋 Eventos:</h3>";
       // Mostrar eventos actualizados
       $session->execute("SET SERIALIZER indent=yes");
       $result = $session->execute("XQUERY /conjunto_de_eventos");
-      echo "<h3>📋 Eventos actuales:</h3>";
+      echo "<h3>📋 Eventos:</h3>";
       echo "<pre>" . htmlspecialchars($result) . "</pre>";
     } else {
       echo "<p>❌ Evento no encontrado con ID $id.</p>";

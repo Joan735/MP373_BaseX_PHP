@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <h1>Acciones CRUD eventos</h1>
     <h2>Leer Eventos</h2>
     <form action="Menu_resultados.php" method="post">
         <button type="submit" name="leer">Leer evento</button>
